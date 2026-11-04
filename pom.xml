@@ -8,12 +8,10 @@
   <version>1.0-SNAPSHOT</version>
 
   <name>kb-builder</name>
-  <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.release>17</maven.compiler.release>
+    <maven.compiler.release>27</maven.compiler.release>
   </properties>
 
   <dependencyManagement>
@@ -39,6 +37,21 @@
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-params</artifactId>
       <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-controls</artifactId>
+      <version>27.0.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.seleniumhq.selenium</groupId>
+      <artifactId>selenium-java</artifactId>
+      <version>4.52.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.seleniumhq.selenium</groupId>
+      <artifactId>selenium-grid</artifactId>
+      <version>4.52.0</version>
     </dependency>
   </dependencies>
 
@@ -91,6 +104,16 @@
         <plugin>
           <artifactId>maven-project-info-reports-plugin</artifactId>
           <version>3.6.1</version>
+        </plugin>
+
+        <!-- external dependencies -->
+        <plugin>
+          <groupId>org.openjfx</groupId>
+          <artifactId>javafx-maven-plugin</artifactId>
+          <version>0.0.8</version>
+          <configuration>
+            <mainClass>com.noobdev.App</mainClass>
+          </configuration>
         </plugin>
       </plugins>
     </pluginManagement>
