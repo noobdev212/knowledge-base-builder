@@ -4,12 +4,16 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 
 import java.time.Duration;
 
 public class Scraper {
   public static String getDOM() {
-    WebDriver driver = new FirefoxDriver();
+    FirefoxOptions option = new FirefoxOptions();
+    option.addArguments("-headless");
+    WebDriver driver = new FirefoxDriver(option);
+
     driver.get("https://www.selenium.dev/selenium/web/web-form.html");
 
     driver.getTitle();
